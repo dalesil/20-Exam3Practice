@@ -48,8 +48,8 @@ def run_test_zero_changer():
     print('  Actual:  ', test2)
 
     # Test 3:
-    test3 = ([8, 4, 0, 9], [77, 0, 0, 1, 5, 0])
-    expected3 = ([8, 4, 1, 9], [77, 2, 3, 1, 5, 4])
+    test3 = ([8, 4, 0, 9], [0])
+    expected3 = ([8, 4, 1, 9], [2])
     zero_changer(test3)
     print()
     print('Test 3:')
