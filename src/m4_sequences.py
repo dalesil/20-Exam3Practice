@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Lucas D'Alesio.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -135,7 +135,7 @@ def practice_problem4a(sequence):
       :type sequence: list | tuple | string
     """
     ###########################################################################
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     ###########################################################################
     # DIFFICULTY AND TIME RATINGS (see top of this file for explanation)
@@ -143,6 +143,11 @@ def practice_problem4a(sequence):
     #    TIME ESTIMATE:   15 minutes.
     ###########################################################################
 
+    s = []
+    for k in range(len(sequence) - 1):
+        if sequence[k] == sequence[k+1]:
+            s = s + [k]
+    return s
 
 def run_test_practice_problem4b():
     """ Tests the    practice_problem4b    function. """
@@ -205,6 +210,7 @@ def practice_problem4b(sequence):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   10 minutes.
     ###########################################################################
+
 
 
 def run_test_practice_problem4c():
