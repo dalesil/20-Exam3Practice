@@ -6,8 +6,8 @@ This problem provides practice at:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Lucas D'Alesio.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -102,6 +102,45 @@ def hourglass(window, n, point, radius, color):
     #    DIFFICULTY:      8
     #    TIME ESTIMATE:  25 minutes (warning: this problem is challenging)
     # -------------------------------------------------------------------------
+
+    x = point.x
+    y = point.y
+    p1 = rg.Point(x-radius,y)
+    p2 = rg.Point(x+radius, y)
+    c = rg.Circle(point, radius)
+    c.fill_color = color
+    c.attach_to(window)
+    l = rg.Line(p1, p2)
+    l.attach_to(window)
+    ox = x
+    startx = ox
+    for j in range(1,n):
+        oy = y + 1.7*j*radius
+        startx = x - j * radius
+        for k in range(j+1):
+            ox = startx + 2*k*radius
+            center = rg.Point(ox, oy)
+            c = rg.Circle(center, radius)
+            c.fill_color = color
+            c.attach_to(window)
+        p1 = rg.Point(startx-radius, oy)
+        p2 = rg.Point(ox+radius, y)
+        l = rg.Line(p1, p2)
+        l.attach_to(window)
+    for j in range(1,n):
+        oy = y + 1.7 * j * radius
+        startx = x - j * radius
+        for k in range(j + 1):
+            ox = startx + 2 * k * radius
+            center = rg.Point(ox, oy)
+            c = rg.Circle(center, radius)
+            c.fill_color = color
+            c.attach_to(window)
+        p1 = rg.Point(startx-radius, oy)
+        p2 = rg.Point(ox+radius, oy)
+        l = rg.Line(p1, p2)
+        l.attach_to(window)
+        window.render()
 
 
 def run_test_many_hourglasses():
