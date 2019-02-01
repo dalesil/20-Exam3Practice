@@ -96,7 +96,7 @@ def integers(sequence_of_sequences):
       :rtype: list of int
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     ###########################################################################
@@ -120,6 +120,12 @@ def integers(sequence_of_sequences):
     #    TIME ESTIMATE:  10 minutes.
     # -------------------------------------------------------------------------
 
+    s = []
+    for j in range(len(sequence_of_sequences)):
+        for k in range(len(sequence_of_sequences[j])):
+            if type(sequence_of_sequences[j][k]) is int:
+                s = s + [sequence_of_sequences[j][k]]
+    return s
 
 def run_test_big_letters():
     """ Tests the    big_letters    function. """
@@ -212,6 +218,13 @@ def big_letters(sequence_of_sequences):
     #    DIFFICULTY:      7
     #    TIME ESTIMATE:  12 minutes.
     # -------------------------------------------------------------------------
+
+    s = ''
+    for j in range(sequence_of_sequences):
+        for k in range(sequence_of_sequences[j]):
+            if type(sequence_of_sequences[j]) is str and sequence_of_sequences[j][k].isupper():
+                s = s + (sequence_of_sequences[j][k])
+    return s
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
