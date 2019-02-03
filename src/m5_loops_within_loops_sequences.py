@@ -32,14 +32,14 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_integers()
+    # run_test_integers()
     run_test_big_letters()
 
 
 def run_test_integers():
     """ Tests the    integers    function. """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # DONE: 2. Implement this TEST function.
     #   It TESTS the  integers  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     #
@@ -130,7 +130,7 @@ def integers(sequence_of_sequences):
 def run_test_big_letters():
     """ Tests the    big_letters    function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  big_letters  function defined below.
     #   Include at least ** 1 ** ADDITIONAL test beyond those we wrote.
     # -------------------------------------------------------------------------
@@ -145,6 +145,50 @@ def run_test_big_letters():
     print('--------------------------------------------------')
 
     # Test 1:
+    expected = 'OTSSSOOPSAPSBOSCOPDOO'
+    answer = big_letters([(3, 1, 4),  # not a string
+                          'Ok what is ThiSSS?',  # OTSSS
+                          (10, 'Ok what is ThiSSS?', 10),  # not a string
+                          [],  # not a string
+                          ['oops'],  # not a string
+                          'oops',  #
+                          ['OOPS'],  # not a string
+                          '1 OOPS !',  # OOPS
+                          'A',  # A
+                          'ooPS $$&*#%&&',  # PS
+                          'B',  # B
+                          'oOpS',  # OS
+                          'C',  # C
+                          'OoPs'  # OP
+                          'D',  # D
+                          'OOps'  # OO
+                          ])
+    print('Expected is:', expected)
+    print('Actual is:  ', answer)
+
+    # Test 2:
+    expected = 'OTSSSOOPSAPSBOSCOPDOO'
+    answer = big_letters([(3, 1, 4),  # not a string
+                          'Ok what is ThiSSS?',  # OTSSS
+                          (10, 'Ok what is ThiSSS?', 10),  # not a string
+                          [],  # not a string
+                          ['oops'],  # not a string
+                          'oops',  #
+                          ['OOPS'],  # not a string
+                          '1 OOPS !',  # OOPS
+                          'A',  # A
+                          'ooPS $$&*#%&&',  # PS
+                          'B',  # B
+                          'oOpS',  # OS
+                          'C',  # C
+                          'OoPs'  # OP
+                          'D',  # D
+                          'OOps'  # OO
+                          ])
+    print('Expected is:', expected)
+    print('Actual is:  ', answer)
+
+    # Test 3:
     expected = 'OTSSSOOPSAPSBOSCOPDOO'
     answer = big_letters([(3, 1, 4),  # not a string
                           'Ok what is ThiSSS?',  # OTSSS
@@ -220,10 +264,12 @@ def big_letters(sequence_of_sequences):
     # -------------------------------------------------------------------------
 
     s = ''
-    for j in range(sequence_of_sequences):
-        for k in range(sequence_of_sequences[j]):
-            if type(sequence_of_sequences[j]) is str and sequence_of_sequences[j][k].isupper():
-                s = s + (sequence_of_sequences[j][k])
+    for i in range(len(sequence_of_sequences)):
+        s2 = sequence_of_sequences[i]
+        if isinstance(s2, str):
+            for l in range(len(s2)):
+                if s2[l].isupper():
+                    s = s + s2[l] + ''
     return s
 
 # -----------------------------------------------------------------------------
